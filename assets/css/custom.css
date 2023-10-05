@@ -1,0 +1,112 @@
+@font-face {
+  font-family: "Montserrat";
+  font-weight: 300;
+  font-display: swap;
+  font-style: normal;
+  font-named-instance: "Light";
+  src: url(/fonts/Montserrat-Light.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Montserrat";
+  font-weight: 300;
+  font-display: swap;
+  font-style: normal;
+  font-named-instance: "Light";
+  src: url(/fonts/Montserrat-Light.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+  font-named-instance: "Regular";
+  src: url(/fonts/Montserrat-Regular.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Montserrat";
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+  font-named-instance: "Medium";
+  src: url(/fonts/Montserrat-Medium.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Montserrat";
+  font-weight: 600;
+  font-display: swap;
+  font-style: normal;
+  font-named-instance: "SemiBold";
+  src: url(/fonts/Montserrat-SemiBold.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Montserrat";
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+  font-named-instance: "Bold";
+  src: url(/fonts/Montserrat-Bold.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Montserrat";
+  font-weight: 800;
+  font-display: swap;
+  font-style: normal;
+  font-named-instance: "ExtraBold";
+  src: url(/fonts/Montserrat-ExtraBold.ttf) format("truetype");
+}
+
+:root {
+  --text: #1c1c1c;
+  --background: #f5f5f5;
+  --primary: #009cc4;
+  --secondary: #d7e0e0;
+  --accent: #756783;
+  --success: #00c458;
+  --error: #eb1c50;
+  --danger: #ff653f;
+
+  --link: #00c8ff;
+  --link-visited: #00509b;
+
+  --nav-text: #f5f5f5;
+  --nav-active: #00c8ff;
+  --nav-background: #292929;
+
+  --accordion: #d5ecf6;
+  --accordion-dark: #d5ecf6;
+  --accordion-content-dark: #2b2b2b;
+  --accordion-content: #ffffff;
+  --accordion-active: #99d7e7;
+  --accordion-divider: #1c1c1c;
+  --accordion-divider-dark: #66c4dc;
+  --subtitle: #2b2b2b;
+  --subtitle-dark: #a0a0a0;
+  --button-border: #009cc4;
+  --button-background: #33b0d0;
+  --button-background-hover: #33b1d0a8;
+  --button-active: #00509b;
+  --button-outline-background-hover: #33b1d04d;
+  --dialog-border: #33b0d0;
+  --dialog-text-border: #66c4dc;
+}
+
+#headline {
+  font-family: "Impact", sans-serif;
+  color: var(--primary);
+}
+
+body,
+button {
+  font-family: "Montserrat", sans-serif;
+}
+
+/* https://codepen.io/sosuke/pen/Pjoqqp?__cf_chl_jschl_tk__=ecc0b72797ae71bc009d6322e3e470773936b386-1604211766-0-ASpz720gXnc6Ej0vzlgY9-KLmlPkldgcOx1wAmGTUCjLZLOxkArNxpRzZ9m8woL-NGmP9LBGVPws8UxMJZrR7O1qFH6QkKtrGVPw6StRnXiK1XTQR_nY905r0XobAG2nOmyC6Zq8mdyPDp1MyHD7JLodJUXCRViXhtmLmRVE_-JGarVJRlxs6k3DzAOQQEJewfp00DjhlD0mxr8ZKpk2yq6IPTZZQ52XYxh26FC5MxLHhs7LuAwhtolmDZyp4_IuwRg8I5m-2--MmvGE8CCqjRWrkE85zgkMXPlOqcZtppRpZhn6Uz9DZAuKheHwVBb0ySIhFYG92bvQOgiKX0TTswB1SHgOLIeqktuyUaAgxI_h */
+.iconadjusted {
+  filter: invert(57%) sepia(61%) saturate(2399%) hue-rotate(156deg) brightness(105%) contrast(102%);
+}

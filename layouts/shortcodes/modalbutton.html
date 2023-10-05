@@ -1,0 +1,15 @@
+<button class="modalbutton button {{ with .Get "classes" }}{{ . }}{{ end }}" {{ with .Get "id" }}id="{{ . }}button"{{ end }} onclick="document.getElementById('{{ with .Get "id" }}{{ . }}{{ end }}modal').showModal()">
+    {{ with .Get "icon" }}<i class="{{ . }}"></i>{{ end }} {{ with .Get "title" }}{{ . }}{{ end }}
+</button>
+<dialog {{ with .Get "id" }}id="{{ . }}modal"{{ end }} {{ with .Get "id" }}onclick="document.getElementById('{{ . }}modal').close()"{{ end }}>
+    <div class="modalcontainer" onclick="(function(event){event.stopPropagation()})(event)">
+        <div class="innermodalcontainer">
+            <textarea {{ with .Get "id" }}id="{{ . }}text"{{ end }} rows="16" readonly>
+                {{- .Inner -}}
+            </textarea>
+            <div class="modalbuttoncontainer">
+                <button {{ with .Get "id" }}onclick="(function(event){ navigator.clipboard.writeText(document.getElementById('{{ . }}text').value); document.getElementById('{{ . }}modal').close() })(event)"{{ end }}><i class="fa-solid fa-copy"></i>Copy</button>
+            </div>
+        </div>
+    </div>
+</dialog>

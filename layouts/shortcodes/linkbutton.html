@@ -1,0 +1,3 @@
+<a {{ with .Get "url" }}href="{{ . }}"{{ end }}>
+    <button class="linkbutton button {{ with .Get "classes" }}{{ . }}{{ end }}">{{ with .Get "icon" }}<i class="{{ . }}"></i>{{ end }} {{ with .Get "title"}}{{ . }}{{ end }}</button>
+</a>

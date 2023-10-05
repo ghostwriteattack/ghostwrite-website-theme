@@ -1,0 +1,5 @@
+<div class="smallcolumn {{ if (default false (.Get "reverse")) }}smallcolumn-reverse{{ end }}">
+  {{ $parts := split .Inner "<--->" }}
+  <div class="smallcolumn-img">{{ index ($parts) 0 | $.Page.RenderString }}</div>
+  <div class="smallcolumn-content">{{ index ($parts) 1 | $.Page.RenderString }}</div>
+</div>

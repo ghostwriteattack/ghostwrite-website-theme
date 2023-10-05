@@ -1,0 +1,28 @@
+<footer>
+  <div class="contentcontainer">
+    <div id="footercontainer">
+      <div id="footerlogos">
+        <div>
+          <img src="/cispa.svg" />
+          <img src="/helmholtz-brand-white.svg" />
+        </div>
+      </div>
+      <div id="footeraddress">
+        <div>
+          <span>CISPA Helmholtz Center for Information Security</span>
+          <span>Stuhlsatzenhaus 5</span>
+          <span>66123 Saarbrücken</span>
+        </div>
+      </div>
+      <div id="footerlinks">
+        <div>
+          <a href="https://example.com/imprint">Imprint</a>
+        </div>
+      </div>
+    </div>
+    <p id="footerbottom">
+      {{ .Site.Copyright }} - Last Update: {{ time.Now | time.Format
+      "2006-01-02" }}
+    </p>
+  </div>
+</footer>

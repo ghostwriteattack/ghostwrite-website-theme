@@ -1,0 +1,69 @@
+{{ define "main" }}
+{{ $pages := where .Site.RegularPages "Type" "homepage" }}
+{{ $pages = where $pages "File.Dir" "homepage/" }}
+{{ $pages = sort $pages "Params.weight" "asc" }}
+
+<nav>
+  <div class="navbar">
+      <div class="nav-logo">
+        <img src="{{ .Params.logo_header }}" >
+        <h1>Ghost<span>Write</span></h1>
+      </div>
+      <ul class="nav-links">
+        <li id="homelink" class="link" data-block="home">
+          {{ .Params.header_title }}
+        </li>
+        {{ range $index, $page := $pages }}
+        {{ if $page.Params.header_menu }}
+        <li class="link" data-block="{{ $page.Params.slug }}">
+          {{ $page.Params.header_title }}
+        </li>
+        {{ end }}
+        {{ end }}
+      </ul>
+      <div class="menu-icon">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+      </div>
+  </div>
+</nav>
+
+<section id="home">
+  <div class="contentcontainer">
+    <img src="{{ .Params.logo }}" >
+    <div>
+      {{/*  <h1 id="headline">Ghost<span>Write</span></h1>  */}}
+      <div id="innerhomecontainer">{{ .Content }}</div>
+    </div>
+  </div>
+</section>
+
+{{ if .Params.home_spacer }}
+<div class="spacer bottomspacer"></div>
+{{ end }}
+
+{{ range $index, $page := $pages }}
+{{ $classes := "content" }}
+{{ if (modBool $index 2) }}
+{{ $classes = printf "%s contentdark" $classes | printf "%s" }}
+{{ end }}
+
+{{ if (eq $index 0) }}
+{{ $classes = printf "%s contentfirst" $classes | printf "%s" }}
+{{ end }}
+
+{{ if $page.Params.small }}
+{{ $classes = printf "%s contentsmall" $classes | printf "%s" }}
+{{ end }}
+
+<section class="{{ $classes }}" id="{{ $page.Params.slug }}">
+  <div class="contentcontainer">
+    {{ with $page.Title }}<h2 class="contenttitle">{{ . }}</h2>{{ end }}
+    {{ $page.Content }}
+  </div>
+</section>
+
+{{ end }}
+
+{{ end }}

@@ -1,0 +1,1 @@
+<div class="person"><a class="personname" {{ with .Get "url" }}href="{{ . }}"{{ end }}>{{ with .Get "name"}}{{ . }}{{ end }}</a><a class="personaffiliation" {{ with .Get "affurl" }}href="{{ . }}"{{ end }}>{{ with .Get "aff"}}({{ . }}){{ end }}</a></div>

@@ -1,0 +1,1 @@
+<img {{ if or (.Get "adjusted") (in .Params "adjusted") }}class="iconadjusted"{{ end }} src="{{ .Get "src" }}" {{ with .Get "alt" }}alt="{{ . }}"{{ end }}>

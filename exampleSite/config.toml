@@ -1,0 +1,32 @@
+theme = "papersite-template"
+languageCode = "en-us"
+baseurl = "http://example.com/"
+title = "Example Attack"
+
+author = "Leon Trampert"
+copyright = "Copyright © 2023, Institution, all rights reserved."
+
+disableKinds = ["section", "taxonomy", "term", "RSS", "robotsTXT"]
+
+[params]
+    name = "Example Attack"
+    description = "This is the site for an example attack."
+
+    github_user = "Tr4mper"
+    github_repo = "https://github.com/Tr4mper/papersite-template"
+    github_banner = true
+
+    institute_street = "Musterstraße 42"
+    institute_city = "12345 Berlin"
+    institute_country = "Germany"
+
+    favicon = "favicon.ico"
+
+[markup]
+  # syntax highlight settings
+  # available themes: https://xyproto.github.io/splash/docs/
+  [markup.highlight]
+    style = "onedark"
+  # unsafe to ensure all shortcodes function correctly
+  [markup.goldmark.renderer]
+    unsafe= true

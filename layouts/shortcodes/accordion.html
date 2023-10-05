@@ -1,0 +1,8 @@
+<div>
+    {{- $title := cond .IsNamedParams (.Get "title") (.Get 0) -}}
+  <div class="accordion {{ if or (.Get "open") (in .Params "open") }}accordion-active{{ end }}{{ if (default false (.Get "last")) }}accordion-last{{ end }}">
+    <p>{{ $title | .Page.RenderString }}</p>
+    <img src="/chevron-arrow.svg">
+  </div>
+  <div class="accordion-panel" {{ if or (.Get "open") (in .Params "open") }}style="display: block"{{ end }}>{{ .Inner | markdownify }}</div>
+</div>

@@ -1,0 +1,11 @@
+name = "papersite-template"
+license = "MIT"
+description = "A theme to quickly create pages for scientific projects."
+homepage = "https://github.com/Tr4mper/papersite-template"
+tags = []
+features = []
+min_version = "0.88.0"
+
+[author]
+  name = "Leon Trampert"
+  homepage = "https://leon.trampert.me"
