@@ -40,9 +40,5 @@
     <script src="{{ .RelPermalink }}" defer></script>
     {{ end }}
 
-    {{ with resources.Get "js/shortcodes.js" }}
-    <script src="{{ .RelPermalink }}" defer></script>
-    {{ end }}
-    
     {{ hugo.Generator }}
 </head>

@@ -6,15 +6,6 @@ nav {
   z-index: 100;
 }
 
-.active-link {
-  color: var(--nav-active);
-}
-
-.nav-links a {
-  text-decoration: none;
-  color: var(--nav-text);
-}
-
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -42,6 +33,16 @@ nav {
   display: flex;
 }
 
+.nav-links a {
+  display: inline-block;
+  color: var(--nav-text);
+  text-decoration: none;
+}
+
+.nav-links a:visited {
+  color: var(--nav-text);
+}
+
 .nav-links li {
   margin-right: 20px;
   cursor: pointer;
@@ -60,6 +61,10 @@ nav {
   cursor: pointer;
 }
 
+.menu-close {
+  display: none;
+}
+
 .bar {
   width: 25px;
   height: 3px;
@@ -70,7 +75,7 @@ nav {
 /* Media Query for Mobile */
 @media screen and (max-width: 768px) {
   .nav-links {
-    display: none; /* Hide the links on mobile */
+    display: none; /* Hidden until toggled */
     flex-direction: column;
     background-color: var(--nav-background);
     position: absolute;
@@ -89,11 +94,27 @@ nav {
     margin-left: 0;
   }
 
-  .nav-links.active {
+  nav:target .nav-links {
     display: flex;
   }
 
   .menu-icon {
     display: flex; /* Show the menu icon on mobile */
+  }
+
+  .menu-open {
+    display: flex;
+  }
+
+  .menu-close {
+    display: none;
+  }
+
+  nav:target .menu-open {
+    display: none;
+  }
+
+  nav:target .menu-close {
+    display: flex;
   }
 }

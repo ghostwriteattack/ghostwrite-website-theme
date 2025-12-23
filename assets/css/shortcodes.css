@@ -17,17 +17,73 @@
 
 .accordion {
   background-color: var(--accordion);
-  cursor: pointer;
-  padding: 1.5rem;
-  width: 100%;
-  text-align: left;
   border: none;
   outline: none;
-  transition: 0.4s;
+  width: 100%;
   position: relative;
+}
+
+.accordion summary {
+  cursor: pointer;
+  list-style: none;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.5rem;
+  transition: background-color 0.3s ease;
+}
+
+.accordion summary::-webkit-details-marker {
+  display: none;
+}
+
+.accordion::before {
+  content: "";
+  position: absolute;
+  left: 5%;
+  bottom: 0;
+  height: 2px;
+  width: 90%;
+  border-bottom: 2px solid var(--accordion-divider);
+}
+
+.accordion summary > img {
+  aspect-ratio: 1/1;
+  height: 2.5rem;
+  transition: transform 0.3s ease;
+}
+
+.accordion summary > span {
+  padding: 0;
+  margin: 0;
+}
+
+.accordion:hover summary,
+.accordion[open] summary {
+  background-color: var(--accordion-active);
+}
+
+.accordion[open]::before {
+  content: none;
+}
+
+.contentdark .accordion[open]::before {
+  content: none;
+}
+
+.accordion[open] summary > img {
+  transform: rotate(-180deg);
+}
+
+.accordion-panel {
+  padding: 1.5rem;
+  background-color: var(--accordion-content);
+  color: var(--background);
+}
+
+.accordion-panel > p {
+  margin-top: 0;
 }
 
 .contentdark .accordion {
@@ -35,55 +91,17 @@
   color: var(--text);
 }
 
-.accordion::before {
-  content : "";
-  position: absolute;
-  left: 5%;
-  bottom  : 0;
-  height  : 2px;
-  width   : 90%;
-  border-bottom:2px solid var(--accordion-divider);
+.contentdark .accordion::before {
+  border-bottom: 2px solid var(--accordion-divider-dark);
 }
 
-.contentdark .accordion::before {
-  border-bottom:2px solid var(--accordion-divider-dark);
+.contentdark .accordion summary {
+  color: var(--text);
 }
 
 .contentdark .accordion-panel {
   background-color: var(--accordion-content-dark);
-}
-
-.accordion > img {
-  aspect-ratio: 1/1;
-  height: 2.5rem;
-  transition-duration: 0.4s;
-  transition-property: transform;
-}
-
-.accordion > p {
-  padding: 0;
-  margin: 0;
-}
-
-.accordion-active, .accordion:hover {
-  background-color: var(--accordion-active);
-}
-
-.accordion-active > img {
-  transform: rotate(-180deg);
-  -webkit-transform: rotate(-180deg);
-}
-
-.accordion-panel {
-  padding: 1.5rem;
-  background-color: var(--accordion-content);
-  display: none;
-  overflow: hidden;
-  width: 100%;
-}
-
-.accordion-panel > p {
-  margin-top: 0;
+  color: var(--background);
 }
 
 .smallcolumn {

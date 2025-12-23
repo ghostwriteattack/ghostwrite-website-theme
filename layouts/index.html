@@ -3,29 +3,30 @@
 {{ $pages = where $pages "File.Dir" "homepage/" }}
 {{ $pages = sort $pages "Params.weight" "asc" }}
 
-<nav>
+<nav id="menu">
   <div class="navbar">
       <div class="nav-logo">
         <img src="{{ .Params.logo_header }}" >
         <h1>Ghost<span>Write</span></h1>
       </div>
-      <ul class="nav-links">
-        <li id="homelink" class="link" data-block="home">
-          {{ .Params.header_title }}
-        </li>
+      <a class="menu-icon menu-open" href="#menu" aria-label="Open navigation" aria-controls="primary-navigation">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+      </a>
+      <a class="menu-icon menu-close" href="#menu-close" aria-label="Close navigation" aria-controls="primary-navigation">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+      </a>
+      <ul class="nav-links" id="primary-navigation">
+        <li><a id="homelink" href="#home">{{ .Params.header_title }}</a></li>
         {{ range $index, $page := $pages }}
         {{ if $page.Params.header_menu }}
-        <li class="link" data-block="{{ $page.Params.slug }}">
-          {{ $page.Params.header_title }}
-        </li>
+        <li><a href="#{{ $page.Params.slug }}">{{ $page.Params.header_title }}</a></li>
         {{ end }}
         {{ end }}
       </ul>
-      <div class="menu-icon">
-          <div class="bar"></div>
-          <div class="bar"></div>
-          <div class="bar"></div>
-      </div>
   </div>
 </nav>
 

@@ -61,6 +61,7 @@ section {
   padding: 50px 0px;
   display: flex;
   justify-content: center;
+  scroll-margin-top: 2rem; /* offset for sticky nav */
 }
 
 .contentcontainer {
