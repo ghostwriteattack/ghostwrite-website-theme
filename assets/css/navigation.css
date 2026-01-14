@@ -73,7 +73,7 @@ nav {
 }
 
 /* Media Query for Mobile */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1000px) {
   .nav-links {
     display: none; /* Hidden until toggled */
     flex-direction: column;

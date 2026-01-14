@@ -246,7 +246,7 @@ dialog::backdrop {
   text-decoration: underline dotted;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1000px) {
   .accordion > img {
     height: 1.5rem;
   }
